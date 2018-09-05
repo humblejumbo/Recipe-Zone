@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="submitIngredient()" #f="ngForm">
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" class="form-control" ngModel required>
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="amount">Amount</label>
+          <input type="number" name="amount"  class="form-control" ngModel [pattern]="'^[1-9]+[0-9]*$'" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-primary"  style="margin:5px" [disabled]="f.invalid" *ngIf="!editMode">
+            Add</button>
+          <button class="btn btn-success" style="margin:5px" [disabled]="f.invalid" 
+          *ngIf="editMode">Update</button>
+          <button type="button" class="btn btn-danger" style="margin:5px" (click)="deleteIngredient()" 
+          *ngIf="editMode">Delete</button>
+          <button type="button" class="btn btn-default" style="margin:5px" (click)="clearIngredient()" 
+          *ngIf="editMode">Clear</button>
+        </div>
+      </div> 
+    </form>
+  </div>
+</div>
