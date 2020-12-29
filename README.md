@@ -9,3 +9,6 @@ Two Firebase services- **Realtime Database** and **Authentication** are used in 
 
 ## AWS S3
 This project is deployed on AWS S3.
+
+## Hosted at
+http://recipe-zone.s3-website.ap-south-1.amazonaws.com/
